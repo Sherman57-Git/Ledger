@@ -1,11 +1,18 @@
-package com.example.demo;
+package Service;
+
+import Model.Transaction;
 
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+@Value("${app.csv.path}")
+private String fileName;
 
+@Service
 public class TransactionManager {
     public final String fileName = ".idea/File/transactions.csv";
     // Reading Transactions from a file
